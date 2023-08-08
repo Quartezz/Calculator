@@ -19,16 +19,15 @@ deleteBtn.addEventListener('click', deleteNumber);
 pointBtn.addEventListener('click', appendPoint);
 
 numberBtns.forEach((button) =>
-    button.addEventListener('click', () => appendNumber(button.textContent)
-    )
+    button.addEventListener('click', () => appendNumber(button.textContent))
 )
 
 operatorBtns.forEach((button) =>
-    button.addEventListener('click', setOperation(button.textContent))
+    button.addEventListener('click', () => setOperation(button.textContent))
 )
 
 function appendNumber(number) {
-    if (currentOperationScreen.textContent === '0' || resetScreen)
+    if (currentOperationScreen.textContent === '0' || doResetScreen)
     resetScreen();
     currentOperationScreen.textContent += number;
 }
@@ -41,7 +40,7 @@ function resetScreen() {
 function appendPoint() {
     if(doResetScreen) resetScreen();
     if(currentOperationScreen.textContent === '')
-    currentOperationScreen.textContent = '0';
+        currentOperationScreen.textContent = '0';
     if(currentOperationScreen.textContent.includes('.')) return;
     currentOperationScreen.textContent += '.';
 }
@@ -67,7 +66,7 @@ function setOperation(operator) {
 }
 
 function evaluate() {
-    if(currentOperation === null || resetScreen) return;
+    if(currentOperation === null || doResetScreen) return;
     if(currentOperation === '÷' && currentOperationScreen.textContent === '0') {
         alert("You can't divide by 0!");
         return;
