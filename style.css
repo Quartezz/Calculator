@@ -1,0 +1,124 @@
+:root {
+    --bg: #f6f6f6;
+    --font: #222;
+    --border: #333;
+    --screen: #eee;
+    --calc: #aaa;
+    --button: #eee;
+    --button-hover: #ddd;
+    --button-active: #ccc;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--font);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin-bottom: 100px;
+}
+
+button {
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+    min-height: 500px;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+.calc-container {
+    width: 400px;
+    border: 2px var(--border) solid;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: var(--calc);
+}
+
+.screen {
+    padding: 10px 20px;
+    border: 2px var(--border) solid;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: var(--screen);
+    text-align: right;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.screen-second {
+    min-height: 32px;
+    font-size: 20px;
+}
+
+.screen-first {
+    min-height: 64px;
+    font-size: 40px;
+}
+
+.btns-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.button {
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: var(--button);
+    border: 2px var(--border) solid;
+}
+
+.button:hover {
+    background-color: var(--button-hover);
+}
+
+.button:active {
+    background-color: var(--button-active);
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+}
