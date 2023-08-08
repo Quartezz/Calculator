@@ -1,5 +1,5 @@
 let currentOperation = null;
-let resetScreen = false;
+let doResetScreen = false;
 let firstOperand = '';
 let secondOperand = '';
 
@@ -35,11 +35,11 @@ function appendNumber(number) {
 
 function resetScreen() {
     currentOperationScreen.textContent = '';
-    resetScreen = false;
+    doResetScreen = false;
 }
 
 function appendPoint() {
-    if(resetScreen) resetScreen();
+    if(doResetScreen) resetScreen();
     if(currentOperationScreen.textContent === '')
     currentOperationScreen.textContent = '0';
     if(currentOperationScreen.textContent.includes('.')) return;
@@ -50,12 +50,20 @@ function deleteNumber() {
     currentOperationScreen.textContent = currentOperationScreen.textContent.toString().slice(0, -1);
 }
 
+function clear() {
+    currentOperationScreen.textContent = '0';
+    lastOperationScreen.textContent = '0';
+    firstOperand = '';
+    secondOperand = '';
+    currentOperation = null;
+}
+
 function setOperation(operator) {
     if (currentOperation !== null) evaluate();
     firstOperand = currentOperationScreen.textContent;
     currentOperation = operator;
     lastOperationScreen.textContent = `${firstOperand} ${currentOperation}`;
-    resetScreen = true;
+    doResetScreen = true;
 }
 
 function evaluate() {
@@ -67,7 +75,7 @@ function evaluate() {
 
     secondOperand = currentOperationScreen.textContent;
     currentOperationScreen.textContent = roundResult(
-        operate(currentOperation, firstOperand, secondOperand);
+        operate(currentOperation, firstOperand, secondOperand)
     )
     lastOperationScreen.textContent = `${firstOperand} ${currentOperation} ${secondOperand} =`
     currentOperation = null;
