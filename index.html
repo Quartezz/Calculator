@@ -5,9 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
 </head>
 <body>
-    
-    <script src="script.js"></script>
+<main class="main">
+    <div class="calc-container">
+        <div class="screen">
+            <div class="screen-second" id="lastOperation"></div>
+            <div class="screen-first" id="currentOperation">0</div>
+        </div>
+        <div class="btns-grid">
+            <button class="button clear span-2">CLEAR</button>
+            <button class="button delete span-2">DELETE</button>
+        
+            <button class="button" data-number>7</button>
+            <button class="button" data-number>8</button>
+            <button class="button" data-number>9</button>
+            <button class="button" data-operator>÷</button>
+            <button class="button" data-number>4</button>
+            <button class="button" data-number>5</button>
+            <button class="button" data-number>6</button>
+            <button class="button" data-operator>×</button>
+            <button class="button" data-number>1</button>
+            <button class="button" data-number>2</button>
+            <button class="button" data-number>3</button>
+            <button class="button" data-operator>-</button>
+            <button class="button" id="point">.</button>
+            <button class="button" data-number>0</button>
+            <button class="button" data-operator>=</button>
+            <button class="button" data-operator>+</button>
+        </div>
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</main>
+    <div class="footer">Copyright © 2023 kamilmachel</div>
+    <script src="script.js" defer></script>
 </body>
 </html>
